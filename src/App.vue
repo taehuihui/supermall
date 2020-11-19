@@ -1,28 +1,31 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- 根据路由映射显示组件视图 -->
+    <keep-alive exclude="Detail">
+      <router-view></router-view>
+    </keep-alive>
+    <!-- 3.使用组件 -->
+    <main-tabbar></main-tabbar>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// 1.导入组件 模板对象/构造器
+// import TabBar from './components/common/tabbar/Tabbar'
+// import TabBarItem from './components/common/tabbar/TabbarItem'
+import MainTabbar from './components/content/maintab/MainTabbar'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  components: {//2.注册组件，这里相当于简写TabBar(组件标签名):TabBar(组件模板对象)
+    // TabBar,
+    // TabBarItem
+    MainTabbar
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+/* base.css文件引入 */
+@import "assets/css/base.css";
 </style>
