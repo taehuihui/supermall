@@ -6,10 +6,15 @@
         购物车({{length}})
       </div>
     </nav-bar>
-    <scroll ref="scroll">
+    <scroll ref="scroll" v-if="carList.length!==0">
       <car-list></car-list>
     </scroll>
+
+    <div v-else class="car-img">
+      <img src="~assets/images/gouwuc.jpg">
+    </div>
     <car-bottom></car-bottom>
+    
   </div>
 </template>
 
@@ -50,6 +55,7 @@ export default {
   }
   .car{
     height: 100vh;
+    background-color: #f2f2f2;
   }
   .wrapper{
     /* height: calc(100% - 44px - 49px);
@@ -67,4 +73,8 @@ export default {
   /* .content{
     background-color: pink;
   } */
+  .car-img img{
+    margin-top: 80px;
+    width: 100%;
+  }
 </style>
