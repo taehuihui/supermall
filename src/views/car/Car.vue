@@ -6,13 +6,15 @@
         购物车({{length}})
       </div>
     </nav-bar>
-    <scroll ref="scroll" v-if="carList.length!==0">
+
+    <div class="car-img" v-if="carList.length===0">
+      <img src="~assets/images/gouwuc.jpg">
+    </div>
+    <scroll ref="scroll" v-else>
       <car-list></car-list>
     </scroll>
 
-    <div v-else class="car-img">
-      <img src="~assets/images/gouwuc.jpg">
-    </div>
+    
     <car-bottom></car-bottom>
     
   </div>
@@ -43,13 +45,15 @@ export default {
     })
   },
   activated(){
-    this.$refs.scroll.refresh()
+    if(this.$refs.scroll){
+      this.$refs.scroll.refresh()
+    }
     console.log('activated')
   }
 }
 </script>
 
-<style sc>
+<style scoped>
   .nav-bar{
     background-color: var(--color-tint);
   }

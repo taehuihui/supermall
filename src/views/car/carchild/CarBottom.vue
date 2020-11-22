@@ -12,7 +12,7 @@
   </div>
 </template>
 
-<script>
+<script scoped>
 import CarCheck from 'views/car/carchild/CarCheck'
 
 import { mapGetters } from 'vuex'

@@ -7,7 +7,7 @@
     <div class="pro-edit">
       <img src="~assets/images/profile/my.png" width="40px">
       <div class="edit-msg">
-        <p>登录/注册</p>
+        <p @click="toLogin">登录/注册</p>
         <p><i class="el-icon-phone-outline"></i>暂无绑定的手机号</p>
       </div>
       <span class="el-icon-arrow-right pro-right"></span>
@@ -67,6 +67,11 @@ export default {
   },
   components:{
     NavBar
+  },
+  methods:{
+    toLogin(){
+      this.$router.push('/login')
+    }
   }
 }
 

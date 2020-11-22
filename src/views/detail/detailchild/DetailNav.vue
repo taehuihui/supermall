@@ -3,7 +3,7 @@
       <div slot="left" @click="backClick">&lt;</div>
       <div slot="center" class="center">
         <span href="" v-for="(item,index) in titles"
-                   @click="navClick(index)"
+                   @click.prevent="navClick(index)"
                    :key="index"
                     :class="{active:currentIndex === index}">{{item}}</span>
       </div>
@@ -24,7 +24,9 @@ export default {
   },
   methods:{
     navClick(index){
+      console.log(index)
       this.currentIndex=index
+      console.log(this.currentIndex)
       this.$emit('detailnav',index)
     },
     backClick(){

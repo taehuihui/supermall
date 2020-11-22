@@ -16,6 +16,8 @@ const Category = ()=> import('views/category/Category')
 const Car = ()=> import('views/car/Car')
 const Profile = ()=> import('views/profile/Profile')
 const Detail = ()=> import('views/detail/Detail')
+const Login = ()=> import('views/login/Login')
+const Register = ()=> import('views/register/Register')
 
 // 解决ElementUI导航栏中的vue-router在3.0版本以上重复点菜单报错问题
 const originalPush = Router.prototype.push
@@ -57,6 +59,16 @@ export default new Router({
           path: '/detail/:iid',//❓关于前后端路由，参数写法，或者拼接之类的具体怎么搞，还有发送请求时的，也要区分
           name: 'Detail',
           component: Detail
+        },
+        {
+          path: '/login',
+          name: 'Login',
+          component: Login
+        },
+        {
+          path: '/register',
+          name: 'Register',
+          component: Register
         },
         // {
         //   path: '/recommend/:iid',//❓关于前后端路由，参数写法，或者拼接之类的具体怎么搞，还有发送请求时的，也要区分

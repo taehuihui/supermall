@@ -55,6 +55,18 @@ var Detail = function Detail() {
   return Promise.resolve().then(function () {
     return _interopRequireWildcard(require('views/detail/Detail'));
   });
+};
+
+var Login = function Login() {
+  return Promise.resolve().then(function () {
+    return _interopRequireWildcard(require('views/login/Login'));
+  });
+};
+
+var Register = function Register() {
+  return Promise.resolve().then(function () {
+    return _interopRequireWildcard(require('views/register/Register'));
+  });
 }; // 解决ElementUI导航栏中的vue-router在3.0版本以上重复点菜单报错问题
 
 
@@ -95,6 +107,14 @@ var _default = new _vueRouter["default"]({
     //❓关于前后端路由，参数写法，或者拼接之类的具体怎么搞，还有发送请求时的，也要区分
     name: 'Detail',
     component: Detail
+  }, {
+    path: '/login',
+    name: 'Login',
+    component: Login
+  }, {
+    path: '/register',
+    name: 'Register',
+    component: Register
   } // {
   //   path: '/recommend/:iid',//❓关于前后端路由，参数写法，或者拼接之类的具体怎么搞，还有发送请求时的，也要区分
   //   name: 'Recommend',

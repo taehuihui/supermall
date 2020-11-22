@@ -60,7 +60,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   .cart-list{
       display: flex;
       height: 100vh;
