@@ -6,7 +6,6 @@ Object.defineProperty(exports, "__esModule", {
 exports.debounce = debounce;
 exports.formatDate = formatDate;
 
-// 防抖操作❓apply?
 function debounce(fn, delay) {
   var timId = null;
   return function () {

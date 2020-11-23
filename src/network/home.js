@@ -1,5 +1,5 @@
 // 首页的数据请求
-    // 导入时用export，导出时记得加大括号
+
 import {request} from './request'
 
 export function getHomeData(){
@@ -14,7 +14,6 @@ export function getHomeData(){
 export function getHomeGoods(type,page){
     return request({
         url:'/home/data',
-        // ❓关于网络的传参之类的
         params:{
             type,page
         }

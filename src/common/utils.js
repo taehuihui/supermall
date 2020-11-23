@@ -1,4 +1,3 @@
-// 防抖操作❓apply?
 export function debounce(fn, delay) {
     let timId = null
     return function (...args) {

@@ -18,7 +18,7 @@
                           @imgLoadFini="imgLoadFini"></detail-goods-info>
       <detail-param-info :paramInfo="paramInfo" ref="params"></detail-param-info>
       <detail-comment :commentInfo="commentInfo" ref="comment"></detail-comment>
-      <goods-list :goodslist="recommendInfo" ref="recommend"></goods-list>
+      <detail-recom :goodslist="recommendInfo" ref="recommend"></detail-recom>
     </scroll>
     <!-- 组件如果要触发原生事件，需要加上.native -->
     <back-top  @click.native="backClick" v-show="isShow"></back-top>
@@ -37,10 +37,10 @@ import DetailParamInfo from 'views/detail/detailchild/DetailParamInfo'
 import DetailComment from 'views/detail/detailchild/DetailComment'
 import DetailNav from 'views/detail/detailchild/DetailNav'
 import DetailBottom from 'views/detail/detailchild/DetailBottom'
+import DetailRecom from 'views/detail/detailchild/DetailRecom'
 
 import Scroll from 'components/common/scroll/Scroll'
 import Toast from 'components/common/toast/Toast'
-import GoodsList from 'components/content/goods/GoodsList'
 
 import {getDetail,getRecommend,Goods,Shop,GoodsParam} from 'network/detail.js'
 
@@ -79,7 +79,7 @@ export default {
     DetailGoodsInfo,
     DetailParamInfo,
     DetailComment,
-    GoodsList,
+    DetailRecom,
     DetailBottom
   },
   created(){
@@ -128,17 +128,6 @@ export default {
       // console.log(this.recommendInfo)
     })
   },
-  // 对应使用混入mixin
-  // mounted(){
-  //   const refresh=debounce(this.$refs.scroll.refresh,500)
-  //   this.$bus.$on('detailimgLoad',()=>{
-  //     // console.log('--detail--detailimgLoad--')
-  //     // console.log('refresh')
-  //     // 图片加载完成，以及触发监听次数仍然不变
-  //     // refresh就只调用一次了
-  //     refresh()
-  //   })
-  // },
   destroyed(){
     // console.log('des')
     this.$bus.$off('imgLoad',this.itemImgListener)
@@ -210,11 +199,8 @@ export default {
 
 <style scoped>
   .detail{
-    /* 这个的作用在于定下视口高度，其次是遮住tabbar */
+    /* 这个的作用在于定下视口高度 */
     height: 100vh;
-    background-color: #fff;
-    position: relative;
-    z-index: 99;
   }
   .wrapper{
     /* 第一种方案 */

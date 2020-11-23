@@ -1,6 +1,5 @@
 import axios from 'axios'
 
-// ❓网络，发送请求这部分还得学习
 export function request(config) {
     //   创建axios实例
     const instance = axios.create({

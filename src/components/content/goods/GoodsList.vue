@@ -20,9 +20,6 @@ export default {
             }
         }
     }
-    // mounted(){
-    //   // console.log(this.goodslist)
-    // }
 }
 </script>
 

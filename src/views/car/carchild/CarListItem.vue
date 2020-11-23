@@ -43,7 +43,6 @@ export default {
   },
   methods:{
     checkClick(item){
-      // this.isChecked=!this.isChecked
       this.$store.commit('changeChecked',item)
       // this.carItem.checked=!this.carItem.checked//这种无法跟踪❌
     }

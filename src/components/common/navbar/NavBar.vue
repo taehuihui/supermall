@@ -19,28 +19,18 @@ export default {
     .navbar{
         height: 44px;
         line-height: 44px;
-        /* background-color: pink; */
         display: flex;
         justify-content: space-between;
         text-align: center;
 
         box-shadow: 0 1px 8px rgba(100, 100, 100, 0.2);
-
-        /* position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 99; */
     }
     .center{
         color: seashell;
         font-weight: 600;
         width: 250px;
-        /* background-color: blue; */
-        
     }
     .left,.right{
         width: 60px;
-        /* background-color: pink; */
     }
 </style>

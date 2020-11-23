@@ -5,7 +5,9 @@
       <router-view></router-view>
     </keep-alive>
     <!-- 3.使用组件 -->
-    <main-tabbar></main-tabbar>
+    <!-- v-show="$route.meta.showMainTab"判断当前组件是否显示底部导航，
+        需要在路由组件映射时，设置meta参数 -->
+    <main-tabbar v-show="$route.meta.showMainTab"></main-tabbar>
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-<!-- 💥注意加上这个才能轮播 v-if="banner.length>1" ❓-->
+<!-- 💥注意加上这个才能轮播 v-if="banner.length>1" -->
   <swiper v-if="banner.length>1">
     <swiper-item v-for="(item,index) in banner" :key="index">
       <a :href="item.link">
@@ -11,7 +11,6 @@
 
 <script>
   import {Swiper, SwiperItem} from 'components/common/swiper'
-
   export default {
     name: "HomeSwiper",
     props: {
@@ -43,5 +42,4 @@
 </script>
 
 <style scoped>
-
 </style>

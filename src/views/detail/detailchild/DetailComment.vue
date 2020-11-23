@@ -8,22 +8,23 @@
           </div>
       </div>
 
-      <div class="info-user">
-          <img :src="commentInfo.user.avatar" alt="">
-          <span>{{commentInfo.user.uname}}</span>
-      </div>
-
-      <div class="info-detail">
-          <p>{{commentInfo.content}}</p>
-          <div class="info-other">
-              <span class="data">{{commentInfo.created | showDate}}</span>
-              <span>{{commentInfo.style}}</span>
-          </div>
-          <div class="info-imgs">
-              <!-- 这个里面没数据暂时用下面那个顶替，看呈现效果 -->
-              <!-- <img :src="item" v-for="(item,index) in commentInfo.image" :key="index" alt=""> -->
+      <div class="comment-con">
+          <div class="info-user">
             <img :src="commentInfo.user.avatar" alt="">
-          </div>
+            <span>{{commentInfo.user.uname}}</span>
+        </div>    
+        <div class="info-detail">
+            <p>{{commentInfo.content}}</p>
+            <div class="info-other">
+                <span class="data">{{commentInfo.created | showDate}}</span>
+                <span>{{commentInfo.style}}</span>
+            </div>
+            <div class="info-imgs">
+                <!-- 这个里面没数据暂时用下面那个顶替，看呈现效果 -->
+                <!-- <img :src="item" v-for="(item,index) in commentInfo.image" :key="index" alt=""> -->
+                <img :src="commentInfo.user.avatar" alt="">
+            </div>
+        </div>
       </div>
   </div>
 </template>
@@ -50,12 +51,13 @@ export default {
 
 <style>
   .comment{
-      padding: 0 10px;
+      padding: 10px 10px;
+      border-bottom: 5px solid #f2f5f8;
   }
   .info-header{
       display: flex;
       justify-content: space-between;
-      margin: 12px 0;
+      margin-bottom: 10px;
       padding: 12px 0;
       border-bottom: 2px solid rgba(204, 204, 204, 0.5);
   }
@@ -69,7 +71,9 @@ export default {
       vertical-align: top;
       margin-right: 10px;
   }
-  .info-other{
-    
+  .comment-con{
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(204, 204, 204, 0.534);
+      
   }
 </style>

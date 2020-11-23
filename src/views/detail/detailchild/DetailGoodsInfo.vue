@@ -37,7 +37,6 @@ export default {
         if(this.counter === this.imagesLength){
             this.$emit('imgLoadFini')
         }
-        // console.log(this.counter)
     }
   },
   watch:{

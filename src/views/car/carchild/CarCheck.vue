@@ -27,10 +27,6 @@ export default {
     border: 1px solid #ccc;
     border-radius: 50%;
   }
-  /* .check-button img{
-    background-color: var(--color-high-text);
-    border-radius: 50%;  
-  } */
   .inactive{
       background-color: var(--color-high-text);
       border-color: tomato;

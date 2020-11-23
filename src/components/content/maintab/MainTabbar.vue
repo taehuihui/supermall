@@ -12,12 +12,6 @@
             <img slot="tab-img-active" src="~assets/images/tabbars/classify1.png" alt="">
             <div slot="tab-text">分类</div>
         </tab-bar-item>
-        
-        <!-- <tab-bar-item path="/car" activeColor="salmon">
-            <img slot="tab-img" src="~assets/images/car.png" alt="">
-            <img slot="tab-img-active" src="~assets/images/tabbars/car1.png" alt="">
-            <div slot="tab-text">购物车</div>
-        </tab-bar-item> car为什么不行？？？？-->
 
         <tab-bar-item path="/car" activeColor="salmon">
             <img slot="tab-img" src="~assets/images/tabbars/shop.png" alt="">
@@ -50,12 +44,9 @@ export default {
         display: flex;
         height: 49px;
         background-color: #f6f6f6;
-        /* justify-content: space-around; */
         text-align: center;
-        /* line-height: 49px; */
 
         position: fixed;
-        /* ❓似乎总是有缝隙 */
         bottom: -1px;
         left: 0;
         right: 0;

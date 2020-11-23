@@ -20,7 +20,6 @@ import { mapGetters } from 'vuex'
 export default {
     data(){
         return{
-            // isChecked:true
             allChecked:false
         }
     },
@@ -65,9 +64,6 @@ export default {
           }else{
             this.$store.commit('allChecked')
           }
-        // for(let item of this.carList){
-        //     item.checked=!this.judgeCheck
-        // }
       }
     }
 }

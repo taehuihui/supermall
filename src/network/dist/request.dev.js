@@ -9,7 +9,6 @@ var _axios = _interopRequireDefault(require("axios"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-// ❓网络，发送请求这部分还得学习
 function request(config) {
   //   创建axios实例
   var instance = _axios["default"].create({

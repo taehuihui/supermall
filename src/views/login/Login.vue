@@ -110,12 +110,6 @@ import NavBar from 'components/common/navbar/NavBar'
   .login-bar .left{
       color: seashell;
   }
-  .login{
-      height: 100vh;
-      background-color: #fff;
-      position: relative;
-      z-index: 99;
-  }
   .login_tab{
     /* width:200px; */
     display: flex;

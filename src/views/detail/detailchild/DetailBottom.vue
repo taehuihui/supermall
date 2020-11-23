@@ -27,7 +27,6 @@ export default {
   methods:{
     addCar(){
       this.$emit('addcar')
-      // console.log('car')
     }
   }
 }
@@ -47,7 +46,6 @@ export default {
   .bar-item{
     flex: 1;
     display: flex;
-    /* justify-content: space-around; */
   }
   .bar-item>div{
     flex: 1;

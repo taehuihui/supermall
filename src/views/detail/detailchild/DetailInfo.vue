@@ -86,7 +86,6 @@ export default {
       margin: 8px 0;
   }
   .info-service{
-      /* border-bottom:4px solid rgba(219, 219, 219, 0.308); */
       border-top:4px solid rgba(219, 219, 219, 0.308);
       display: flex;
       justify-content: space-between;

@@ -2,7 +2,6 @@
   <div class="car">
     <nav-bar class="nav-bar">
       <div slot="center">
-        <!-- 购物车({{$store.state.carList.length}}),为了在多个地方都能方便重复使用，那么将其写为vuex的getters更好 -->
         购物车({{length}})
       </div>
     </nav-bar>

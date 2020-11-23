@@ -80,10 +80,6 @@ export default {
     width: calc(100% - 100px);
     height: calc(100% - 93px);
     overflow: hidden;
-    /* background-color: pink; */
-  }
-  .cate-scroll .content{
-      /* background-color: skyblue; */
   }
   .cate-content{
       display: flex;

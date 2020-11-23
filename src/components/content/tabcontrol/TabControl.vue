@@ -41,11 +41,6 @@ export default {
       background-color: #fff;
       display: flex;
       text-align: center;
-
-      /* 滑到顶部时,粘连在顶部导航栏之下 */
-      /* position: sticky;
-      top: 43px;
-      z-index: 99; 后面改动之后已经不起作用了*/
   }
   .tab-item{
       flex: 1;
