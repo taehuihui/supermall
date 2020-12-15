@@ -7,7 +7,7 @@ export default {
             return item.id===payload.id
             // 如果条件成立，则将item加到oldproduct中
           })
-          if(oldproduct){
+          if(oldproduct){//已有商品，数量加一
             context.commit('recompose',oldproduct)
             resolve('加入购物车成功')
           }else{
@@ -15,5 +15,5 @@ export default {
             resolve('加入购物车成功')
           }
           })
-      }
+    }
 }

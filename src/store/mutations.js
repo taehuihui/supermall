@@ -1,3 +1,7 @@
+import {
+  setLocalStore,
+  removeLocalStore
+} from 'config/global'
 export default {
     /**
      * mutations唯一的目的就是要修改state中状态
@@ -25,5 +29,12 @@ export default {
       state.carList.forEach(ele => {
         ele.checked=false
       });
+    },
+    adduserInfo(state,payload){
+      //用户信息
+      //保存到vuex的state中
+      state.userInfo=payload
+      //保存到本地
+      setLocalStore('userInfo', state.userInfo);
     }
 }

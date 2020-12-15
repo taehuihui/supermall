@@ -10,17 +10,17 @@
         <!-- 注册账号密码 -->
         <div class="regis">
             <div class="regis-user">
-                <input type="text" maxlength="11" placeholder="请输入账号...">
+                <input type="text" maxlength="11" v-model="iusername" placeholder="请输入账号...">
             </div>
             <div class="regis-pass">
-                <input type="password" minlength="8" maxlength="14" placeholder="请输入密码..." v-if="!isVisibled">
-                <input type="text" minlength="8" maxlength="14" placeholder="请输入密码..." v-else>
+                <input type="password" minlength="8" maxlength="14" v-model="iuserpwd" placeholder="请输入密码..." v-if="!isVisibled">
+                <input type="text" minlength="8" maxlength="14" v-model="iuserpwd" placeholder="请输入密码..." v-else>
                 <span class="el-icon-view" @click="isVisible" :class="{visibled:isVisibled}"></span>
             </div>
         </div>
         <!-- 注册按钮 -->
         <div class="regis-submit">
-            <input type="submit" value="注册">
+            <input type="submit" value="注册" @click="Register">
         </div>
         <!-- 注册 -->
         <div class="to-login" @click="backClick">登录</div>
@@ -31,11 +31,14 @@
 
 <script>
 import NavBar from 'components/common/navbar/NavBar'
+import {phoneLogin} from 'network/login'
 
 export default {
     data(){
         return{
-            isVisibled:false
+            isVisibled:false,
+            iusername:'',
+            iuserpwd:''
         }
     },
     components:{
@@ -47,6 +50,14 @@ export default {
       },
       isVisible(){
           this.isVisibled=!this.isVisibled
+      },
+      Register(){
+          this.$message({
+              message:'暂不支持,请使用手机验证码登录',
+              width:50,
+              offset:60,
+              center:true
+          })
       }
     }
 }

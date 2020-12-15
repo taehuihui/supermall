@@ -8,8 +8,11 @@
       <img src="~assets/images/profile/my.png" width="40px">
       <div class="edit-msg">
         <router-link to="/login">
-          <div>
+          <div v-if="!loginActive">
             登录/注册
+          </div>
+          <div v-else>
+            {{userName}}
           </div>
         </router-link>
         <p><i class="el-icon-phone-outline"></i>暂无绑定的手机号</p>
@@ -62,15 +65,32 @@
 
 <script>
 import NavBar from 'components/common/navbar/NavBar'
+import {
+  getLocalStore
+} from 'config/global'
 
 export default {
   data(){
     return{
-      scroll:null
+      scroll:null,
+      userName:'',
+      loginActive:true
     }
   },
   components:{
     NavBar
+  },
+  mounted(){
+    let users=JSON.parse(getLocalStore('userInfo'))
+    if(users){
+      this.userName=users["user_name"]
+    }
+    if(this.userName){
+      this.loginActive=true
+    }else{
+      this.loginActive=false
+    }
+
   },
   methods:{
     toLogin(){
