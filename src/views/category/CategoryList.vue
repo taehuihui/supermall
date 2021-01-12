@@ -11,8 +11,10 @@
        <scroll class="cate-scroll">
            <div class="cate-content">
                 <div v-for="item in cateContent" class="cate-content-inner">
-                    <img :src="item.image">
-                    <p>{{item.title}}</p>
+                    <a :href="item.link">
+                        <img :src="item.image">
+                        <p>{{item.title}}</p>
+                    </a>
                 </div>
             </div>
        </scroll>

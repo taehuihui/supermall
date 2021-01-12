@@ -1,7 +1,7 @@
 <template>
   <swiper v-if="topImages.length>1" class="detailswiper">
     <swiper-item v-for="(item,index) in topImages" :key="index">
-        <img :src="item" alt="">
+        <img :src="'http:'+item" alt="">
     </swiper-item>
   </swiper>
 </template>

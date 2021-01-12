@@ -13,5 +13,23 @@
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <script>
+      document.addEventListener('plusready', function(a) {
+          var first = null;
+          plus.key.addEventListener('backbutton', function() { 
+              if (!first) {
+                  plus.nativeUI.toast("双击退出", {duration:'short'}); 
+                  setTimeout(function() {
+                      first = null;
+                  }, 1000);
+              } else {
+                  if (new Date().getTime() - first < 1000) { 
+                      plus.runtime.quit(); 
+                  }
+              }
+          }, false);
+      });
+      </script>
   </body>
 </html>
+

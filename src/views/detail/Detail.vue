@@ -1,14 +1,5 @@
 <template>
   <div class="detail">
-    <!-- <nav-bar>
-          <div slot="left">&lt;</div>
-          <div slot="center" class="center">
-              <a href="" class="active">商品</a>
-              <a href="">参数</a>
-              <a href="">评论</a>
-              <a href="">推荐</a>
-          </div>
-    </nav-bar> -->
     <detail-nav @detailnav="detailNavC" ref="detailnav"></detail-nav>
     <scroll ref="scroll" :probeType="3" @scroll="scrollD">
       <detail-swiper :topImages="topImages" class="detailswiper"></detail-swiper>
@@ -22,13 +13,12 @@
     </scroll>
     <!-- 组件如果要触发原生事件，需要加上.native -->
     <back-top  @click.native="backClick" v-show="isShow"></back-top>
-    <detail-bottom @addcar="addCar"></detail-bottom>
+    <detail-bottom class="detail_bottom" @addcar="addCar"></detail-bottom>
     <toast :message="message" v-if="isToast"></toast>
   </div>
 </template>
 
 <script>
-// import NavBar from 'components/common/navbar/NavBar'
 import DetailSwiper from 'views/detail/detailchild/DetailSwiper'
 import DetailInfo from 'views/detail/detailchild/DetailInfo'
 import DetailMerchant from 'views/detail/detailchild/DetailMerchant'
@@ -125,7 +115,6 @@ export default {
       // console.log(res)
       // 获取推荐信息
       this.recommendInfo=res.data.list
-      // console.log(this.recommendInfo)
     })
   },
   destroyed(){
@@ -138,18 +127,13 @@ export default {
       this.getNavY()
     },
     detailNavC(index){
-      console.log(index)
-      console.log(this.navY)
       this.currentIndex=index
-      console.log(this.currentIndex)
       this.$refs.scroll.scrollTo(0,-this.navY[index])
     },
     scrollD(position){
       this.isShow=(position.y<-1000)?true:false
-      console.log(position)
       
       this.positionY=-position.y
-      console.log(this.positionY)
       // [0, 2826, 4269, 4578, __ob__: Observer]
       // 加多一个值，方便循环比较
       //  [0, 2826, 4269, 4578, 1.7976931348623157e+308, __ob__: Observer]
@@ -161,9 +145,7 @@ export default {
         // 那么再加上一个判断条件,若this.currentIndex==i，则无需判断了
         // 因为若相等，第二个条件成立，赋值，仍然为原来的值，是没必要的操作，还会使得赋值操作增多，影响性能
         if((this.currentIndex!==i) && (this.positionY>=this.navY[i]) && (this.positionY<this.navY[i+1])){
-          console.log(i)
           this.currentIndex=i
-          console.log(this.currentIndex)
         }
       }
       this.$refs.detailnav.currentIndex=this.currentIndex
@@ -200,23 +182,22 @@ export default {
 <style scoped>
   .detail{
     /* 这个的作用在于定下视口高度 */
+    width: 100vw;
     height: 100vh;
   }
   .wrapper{
     /* 第一种方案 */
     /* 100%相对detail，也就是100vh,然后去掉顶部44px */
-    height: calc(100% - 44px - 49px);
+    height: calc(100vh - 44px - 49px);
     overflow: hidden;
     /* 第二种方案 */
     /* position: absolute;
     left: 0;
     right: 0;
     top: 44px;
-    bottom: 0; */
+    bottom: 49px;
+    overflow: hidden; */
     /* 两种都可以 */
-  }
-  .content{
-    /* background-color: yellow; */
   }
   .detailswiper{
     height: 300px;

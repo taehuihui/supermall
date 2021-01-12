@@ -7,7 +7,7 @@
       <car-check :isChecked="carItem.checked" @click.native="checkClick(carItem)"></car-check>
     </div>
     <div class="item-content">
-    <img :src="carItem.img" alt="">
+    <img :src="'http:'+carItem.img" alt="">
       <div class="item-right">
         <div class="title">{{carItem.title}}</div>
         <div class="desc">{{carItem.desc}}</div>

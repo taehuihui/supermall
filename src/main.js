@@ -10,6 +10,7 @@ import store from 'store/index'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 import 'swiper/dist/css/swiper.css'
+import './appback.js'
 
 Vue.config.productionTip = false
 Vue.prototype.$bus=new Vue()

@@ -1,7 +1,7 @@
 <template>
   <div class="merchant">
       <div class="design">
-          <img :src="shop.logo" alt="">
+          <img :src="'http:'+shop.logo" alt="">
           <span>{{shop.name}}</span>
       </div>
       <div class="description">
